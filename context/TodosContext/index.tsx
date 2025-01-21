@@ -1,13 +1,13 @@
 "use client";
+import { createContext, useMemo, useState } from "react";
+
 import {
   ITodosProviderProps,
   SortOptions,
   Todo,
-  TodoStatus,
   TodosContextType,
+  TodoStatus,
 } from "@/context/TodosContext/types";
-import { createContext, useEffect, useMemo, useState } from "react";
-import { useLocalStorage } from "usehooks-ts";
 
 const todosContext = createContext<TodosContextType>({} as TodosContextType);
 const _todos: Todo[] = [

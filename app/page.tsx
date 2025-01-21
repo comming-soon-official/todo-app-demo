@@ -1,6 +1,9 @@
 "use client";
-import TodoCard from "@/components/TodoCard";
+import Link from "next/link";
+import { useContext } from "react";
+
 import ModalRemoveTodo from "@/components/modals/ModalRemoveTodo";
+import TodoCard from "@/components/TodoCard";
 import { Button } from "@/components/ui/button";
 import {
   Select,
@@ -10,14 +13,11 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-
 import { Separator } from "@/components/ui/separator";
 import { Modals } from "@/context/ModalContext/index.types";
 import { todosContext } from "@/context/TodosContext";
 import { SortOptions, Todo, TodoStatus } from "@/context/TodosContext/types";
 import useModal from "@/hooks/useModal";
-import Link from "next/link";
-import { useContext } from "react";
 
 export default function Home() {
   const { modals, showModal } = useModal();
@@ -104,7 +104,7 @@ export default function Home() {
           </div>
           <Separator className="my-2" />
         </div>
-        <div className="grid grid-cols-1 gap-5 pb-4 md:grid-cols-2">
+        <div className="flex flex-col items-center w-full gap-5 ">
           {todos.map((todo) => (
             <TodoCard
               key={todo.id}
