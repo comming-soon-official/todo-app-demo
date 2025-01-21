@@ -42,7 +42,7 @@ export default function Home() {
   return (
     <>
       <div className="container items-center justify-center">
-        <div className="pt-16 mx-auto ">
+        <div className="pt-8 mx-auto ">
           <div className="flex flex-col items-center gap-2 sm:flex-row">
             <div className="flex w-full sm:w-auto">
               <Button
@@ -104,7 +104,7 @@ export default function Home() {
           </div>
           <Separator className="my-2" />
         </div>
-        <div className="flex flex-col items-center w-full gap-5 ">
+        <div className="flex flex-col items-center w-full gap-5 mt-10 ">
           {todos.map((todo) => (
             <TodoCard
               key={todo.id}

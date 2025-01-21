@@ -1,4 +1,4 @@
-import { format, formatDistanceToNow } from "date-fns";
+import { format } from "date-fns";
 import { Clock, Edit, Trash } from "lucide-react";
 import Link from "next/link";
 
@@ -71,13 +71,14 @@ const TodoCard = (props: TodoCardProps) => {
           >
             {description}
           </CardDescription>
-          <div className="flex items-center gap-2 text-sm text-muted-foreground">
+          <div
+            className={cn(
+              "flex items-center gap-1 mt-4 text-xs text-muted-foreground opacity-60",
+              status === TodoStatus.COMPLETED && "line-through opacity-50"
+            )}
+          >
             <Clock className="w-4 h-4" />
-            <span>
-              Updated {formatDistanceToNow(new Date(updatedAt))} ago
-              {" • "}
-              {format(new Date(updatedAt), "MMM d, yyyy h:mm a")}
-            </span>
+            <span>{format(new Date(updatedAt), "MMM d, yyyy h:mm a")}</span>
           </div>
         </CardContent>
       </div>
